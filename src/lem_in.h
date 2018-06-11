@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:24 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/11 13:17:07 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/11 22:11:20 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct 	s_env
 }				t_env;
 
 t_env		*parse_env(void);
-t_dstr	*walk(t_env *env);
+void		parse_graph(t_env *env);
+t_dstr		*walk(t_env *env);
 
 #endif
