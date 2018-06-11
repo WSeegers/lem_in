@@ -1,0 +1,3 @@
+[submodule "toolkit-wtc"]
+	path = toolkit-wtc
+	url = https://github.com/WSeegers/toolkit-wtc.git
