@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:57 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/11 13:27:55 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/12 10:33:59 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 int		main(void)
 {
 	t_env	*env;
+	t_vert	*vert1;
+	size_t 	i;
 
 	env = parse_env();
-	for (size_t i = 0; i < env->node_no; i++)
-	{
-		f_printf("%s\n", ((t_vert*)s_list_pop(env->map->vert_list, 0))->name);
-	}
+	i = -1;
+		
 	return (0);
 }

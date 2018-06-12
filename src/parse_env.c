@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 10:07:28 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/11 22:13:19 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/12 04:01:17 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	init_env(t_env *env)
 {
 	char	*line;
 	size_t	lem_no;
-
 	while (f_next_line(&line, STDIN) && f_strchr(line, '#'))
 	{
 		f_printf(line);

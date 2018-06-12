@@ -1,0 +1,36 @@
+25
+B 0 0
+C 0 2
+##start
+S 3 0
+E 1 1
+F 1 4
+G 3 3
+K 3 4
+D 0 5
+I 3 5
+H 3 4
+##end
+T 3 6
+M 4 6
+L 4 4
+N 3 4
+S-E
+S-B
+S-G
+B-C
+D-I
+E-F
+G-H
+G-K
+E-F
+D-C
+F-H
+H-I
+H-N
+N-T
+I-T
+M-T
+L-M
+K-L
+S-B

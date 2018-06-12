@@ -6,7 +6,7 @@
 #    By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/03 20:54:46 by wseegers          #+#    #+#              #
-#    Updated: 2018/06/11 22:10:10 by wseegers         ###   ########.fr        #
+#    Updated: 2018/06/12 10:06:25 by wseegers         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,13 @@ BIN_PATH = bin
 BIN := $(SRC:%.c=$(BIN_PATH)/%.o)
 DEP := $(BIN:%.o=%.d)
 
-all : make_lib $(NAME) 
+all : Make_LIB $(NAME) 
 
-make_lib :
+Make_LIB :
 	make -C toolkit-wtc
 
-$(NAME) : % : $(SRC_PATH)/%.c $(BIN)
-	$(CC) $(CFLAGS) $(INC) -o $@ $^ $(LIB)
+$(NAME) : % : $(SRC_PATH)/%.c $(BIN) $(LIB)
+	$(CC) $(CFLAGS) $(INC) -o $@ $^
 
 $(BIN_PATH)/%.o : $(SRC_PATH)/%.c
 	@mkdir -p $(BIN_PATH)
