@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 21:45:21 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/12 09:53:18 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/13 11:14:16 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	check_for_command(t_env *env, char *line, int count)
 	}	
 	else if (f_strstr(line, CMD_END))
 	{
-		env->end = (count) ? count  : env->end;
+		env->target = (count) ? count  : env->target;
 		f_printf("%s\n", line);
 		return (1);
 	}
@@ -47,6 +47,7 @@ static void	parse_neighbours(t_env *env, char* line)
 	i = 1;
 	while (i || f_next_line(&line, STDIN))
 	{
+		//f_printf("1\n");
 		i = 0;
 		if (check_for_command(env, line, -1))
 		{

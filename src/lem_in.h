@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:24 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/12 04:47:17 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/13 11:12:38 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct 	s_env
 {
 	t_graph 	*map;
 	size_t		start;
-	size_t		end;
+	size_t		target;
 	size_t		node_no;
 
 	t_lemings	*lemings;
