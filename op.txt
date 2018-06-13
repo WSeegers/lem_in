@@ -1,0 +1,92 @@
+100
+##start
+start 1 3
+room1 5 6
+room2 8 9
+room3 7 8
+room4 7 6
+room5 2 2
+room6 8 3
+room7 0 8
+room8 4 3
+##end
+end 3 5
+room9 8 2
+start-room1
+room1-room2
+room2-room3
+room3-room4
+room4-room5
+room5-room6
+room6-room7
+room7-room8
+room8-room9
+room9-end
+start: start
+target: end
+dijkstra started..Visited[1] start cost: 0
+Visited[1] room1 cost: 1
+Visited[1] room2 cost: 3
+Visited[1] room3 cost: 7
+Visited[1] room4 cost: 15
+Visited[1] room5 cost: 31
+Visited[1] room6 cost: 63
+Visited[1] room7 cost: 127
+Visited[1] room8 cost: 255
+Visited[1] room9 cost: 511
+target: end
+target: room9
+target: room8
+target: room7
+target: room6
+target: room5
+target: room4
+target: room3
+target: room2
+target: room1
+target: start
+dijkstra ended
+start->room1->Seting cost..Done
+room2->Seting cost..Done
+room3->Seting cost..Done
+room4->Seting cost..Done
+room5->Seting cost..Done
+room6->Seting cost..Done
+room7->Seting cost..Done
+room8->Seting cost..Done
+room9->Seting cost..Done
+end->Seting cost..Done
+
+dijkstra started..Visited[1] start cost: 0
+Visited[1] room1 cost: 3
+Visited[1] room2 cost: 9
+Visited[1] room3 cost: 21
+Visited[1] room4 cost: 45
+Visited[1] room5 cost: 93
+Visited[1] room6 cost: 189
+Visited[1] room7 cost: 381
+Visited[1] room8 cost: 765
+Visited[1] room9 cost: 1533
+target: end
+target: room9
+target: room8
+target: room7
+target: room6
+target: room5
+target: room4
+target: room3
+target: room2
+target: room1
+target: start
+dijkstra ended
+start->room1->Seting cost..Done
+room2->Seting cost..Done
+room3->Seting cost..Done
+room4->Seting cost..Done
+room5->Seting cost..Done
+room6->Seting cost..Done
+room7->Seting cost..Done
+room8->Seting cost..Done
+room9->Seting cost..Done
+end->Seting cost..Done
+

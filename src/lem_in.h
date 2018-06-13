@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:24 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/13 11:12:38 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/13 13:28:17 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct 	s_env
 	size_t		node_no;
 
 	t_lemings	*lemings;
-	int			lem_no;
+	size_t		lem_no;
 
 }				t_env;
 
