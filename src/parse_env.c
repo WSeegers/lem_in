@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 10:07:28 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/13 10:36:49 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/14 15:01:42 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	init_env(t_env *env)
 {
 	char	*line;
 	size_t	lem_no;
-
 	while (f_next_line(&line, STDIN) && f_strchr(line, '#'))
 	{
 		f_printf(line);
@@ -37,10 +36,8 @@ static void	init_env(t_env *env)
 	f_printf("%s\n", line);
 	f_strdel(&line);
 	env->map = s_graph_create();
-	env->lemings = (t_lemings*)f_memalloc(sizeof(*env->lemings) * lem_no);
 	env->lem_no = lem_no;
-	while (--lem_no + 1)
-		env->lemings[lem_no] = s_list_create(del_lem);
+	env->lemmings
 }
 
 t_env		*parse_env(void)
