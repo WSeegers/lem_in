@@ -6,7 +6,7 @@
 #    By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/03 20:54:46 by wseegers          #+#    #+#              #
-#    Updated: 2018/06/14 08:09:53 by wseegers         ###   ########.fr        #
+#    Updated: 2018/06/15 02:25:23 by wseegers         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INC = -I toolkit-wtc/include -I src
 LIB = toolkit-wtc/toolkit-wtc.a
 
 SRC_PATH = src
-SRC = parse_env.c parse_graph.c get_paths.c 
+SRC = parse_env.c parse_graph.c get_paths.c issue_orders.c
 BIN_PATH = bin
 BIN := $(SRC:%.c=$(BIN_PATH)/%.o)
 DEP := $(BIN:%.o=%.d)

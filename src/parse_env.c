@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 10:07:28 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/14 15:01:42 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/15 02:29:15 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	init_env(t_env *env)
 	f_strdel(&line);
 	env->map = s_graph_create();
 	env->lem_no = lem_no;
-	env->lemmings
+	env->lems = s_list_create(del_lem);
 }
 
 t_env		*parse_env(void)
