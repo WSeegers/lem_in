@@ -1,0 +1,13 @@
+5
+##start
+start 1 2
+##end
+end 2 1
+room1 3 3
+room2 4 5
+room3 4 4
+start-end
+start-room1
+start-room2
+end-room3
+

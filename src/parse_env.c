@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 10:07:28 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/15 02:29:15 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/23 21:49:38 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "f_string.h"
 #include "f_print.h"
 
-
 static void	del_lem(void* lem)
 {
 	f_memdel(&lem);
@@ -27,17 +26,26 @@ static void	init_env(t_env *env)
 {
 	char	*line;
 	size_t	lem_no;
-	while (f_next_line(&line, STDIN) && f_strchr(line, '#'))
+	int		ret;
+
+	lem_no = 0;
+	while ((ret=f_next_line(&line, STDIN)) && f_strchr(line, '#'))
 	{
-		f_printf(line);
+		f_printf("%s\n", line);
 		f_strdel(&line);
 	}
-	lem_no = f_atoi(line);
+	if (ret == 0 || !f_isdigits(line) || !(lem_no = f_atoi(line)))
+	{
+		f_strdel(&line);
+		E_LEMNO;
+	}
 	f_printf("%s\n", line);
 	f_strdel(&line);
 	env->map = s_graph_create();
 	env->lem_no = lem_no;
 	env->lems = s_list_create(del_lem);
+	env->start = NOT_SPEC;
+	env->target = NOT_SPEC;
 }
 
 t_env		*parse_env(void)

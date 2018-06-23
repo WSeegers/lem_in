@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 08:29:18 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/15 08:04:38 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/23 22:19:34 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ void				issue_orders(t_env *env, t_list *paths)
 	{
 		s_list_pop(s_list_get(paths, lem_no), 0);
 	}
-
 	lem_no = -1;
 	delay = -1;
-
+	if (((t_graph*)s_list_get(paths, 0))->size == 1)
+		delay++;
 	while (++lem_no < env->lem_no)
 	{
-		if (!(lem_no % paths->size))
+		if (!(lem_no % paths->size) &&
+			((t_graph*)s_list_get(paths, 0))->size != 1)
 			++delay;
 		new_lem = create_lemming(lem_no + 1, 
 				s_list_get(paths, lem_no % paths->size),

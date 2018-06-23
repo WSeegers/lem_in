@@ -6,11 +6,11 @@
 #    By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/03 20:54:46 by wseegers          #+#    #+#              #
-#    Updated: 2018/06/15 02:25:23 by wseegers         ###   ########.fr        #
+#    Updated: 2018/06/23 19:51:23 by wseegers         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = lem_in
+NAME = lem-in
 CC = clang
 CFLAGS = -Werror -Wall -Wextra 
 INC = -I toolkit-wtc/include -I src

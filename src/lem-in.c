@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.c                                           :+:      :+:    :+:   */
+/*   lem-in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:57 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/15 08:06:09 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/23 22:18:56 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,27 +53,14 @@ int		main(void)
 	size_t	turn;
 
 	env = parse_env();
-	
+	f_printf("\n");
 	paths = get_paths(env);
 	s_list_mergesort(paths, chk_len);
-	//f_printf("\nFinal_paths:\n");
-	//for (size_t i = 0; i < paths->size; i++)
-	//{
-	//	s_graph_print_verts(s_list_get(paths, i));
-	//	f_printf("\n");
-	//}
 	issue_orders(env, paths);
-	//f_printf("lem issued: %lu\n", env->lems->size);
-	//for (size_t i = 0; i < env->lems->size; i++)
-	//{
-	//	t_lemming *temp = s_list_get(env->lems, 0);
-	//	s_list_rot(env->lems, 1);
-	//	f_printf("lem_no: %lu, delay: %lu, path, ", temp->number, temp->delay);
-	//	s_graph_print_verts(temp->orders);
-	//	f_printf("\n");
-	//}
-	turn = 0;
-	while (walk(env->lems, ++turn))
-		;
+	turn = 1;
+	while (walk(env->lems, turn))
+		turn++;
+	if (turn == 1)
+		f_printf("No routes exist\n");
 	exit (0);
 }
