@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:24 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/23 21:33:59 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/25 06:38:12 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "s_list.h"
 # include "s_graph.h"
 # include "s_dstr.h"
+# include "f_cntl.h"
 
 # define CMD_START	"##start"
 # define CMD_END	"##end"
@@ -24,11 +25,11 @@
 
 # define PATH_WEIGHT 4
 
-# define E_LEMNO f_exit(0, "Error: Specify correctly the number of lem-ins\n")
-# define E_NODEF f_exit(0, "Error: Start or end not specified\n")
-# define E_ROOMS f_exit(0, "Error: Specify atleast 2 rooms\n")
-# define E_DSTART f_exit(0, "Error: Double start\n");
-# define E_DEND	f_exit(0, "Error: Double end\n");
+# define E_LEMNO f_eexit(0, "Specify correctly the number of lem-ins\n")
+# define E_NODEF f_eexit(0, "Start or end not specified\n")
+# define E_ROOMS f_eexit(0, "Specify atleast 2 rooms\n")
+# define E_DSTART f_eexit(0, "Double start\n");
+# define E_DEND	f_eexit(0, "Double end\n");
 
 typedef struct	s_lemming
 {
