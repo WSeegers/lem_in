@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 04:00:45 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/23 22:12:50 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/28 22:10:14 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 #include "s_graph.h"
 #include "s_list.h"
 #include <stdbool.h>
-
-static bool chk_conflicts(t_env *env, t_list *path_list, t_graph *new_path,
-		bool first_check);
 
 static bool has_conflict(t_graph *g1, t_graph *g2)
 {
@@ -93,7 +90,7 @@ static bool resolve_conflicts(t_env *env, t_list *path_list, t_graph *conflict,
 	return (resolve);
 }
 
-static bool chk_conflicts(t_env *env, t_list *path_list, t_graph *new_path,
+bool chk_conflicts(t_env *env, t_list *path_list, t_graph *new_path,
 																bool first_check)
 {
 	size_t i;

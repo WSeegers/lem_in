@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 10:07:28 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/23 21:49:38 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/28 21:57:24 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "f_string.h"
 #include "f_print.h"
 
-static void	del_lem(void* lem)
+static void	del_lem(void *lem)
 {
 	f_memdel(&lem);
 }
@@ -29,7 +29,7 @@ static void	init_env(t_env *env)
 	int		ret;
 
 	lem_no = 0;
-	while ((ret=f_next_line(&line, STDIN)) && f_strchr(line, '#'))
+	while ((ret = f_next_line(&line, STDIN)) && f_strchr(line, '#'))
 	{
 		f_printf("%s\n", line);
 		f_strdel(&line);

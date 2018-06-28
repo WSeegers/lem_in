@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:57 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/23 22:18:56 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/28 21:59:07 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 #include "s_graph.h"
 #include "s_grid.h"
 
-bool	walk(t_list *lems, size_t turn)
+static bool	walk(t_list *lems, size_t turn)
 {
 	size_t		lem_no;
 	t_lemming	*cur;
 	t_vert		*next_step;
-	bool 		finished;
+	bool		finished;
 
 	finished = true;
 	lem_no = -1;
@@ -43,13 +43,13 @@ bool	walk(t_list *lems, size_t turn)
 
 static int	chk_len(void *g1, void *g2)
 {
-	return(((t_graph*)g2)->size - ((t_graph*)g1)->size);
+	return (((t_graph*)g2)->size - ((t_graph*)g1)->size);
 }
 
-int		main(void)
+int			main(void)
 {
 	t_env	*env;
-	t_list 	*paths;
+	t_list	*paths;
 	size_t	turn;
 
 	env = parse_env();
@@ -62,5 +62,5 @@ int		main(void)
 		turn++;
 	if (turn == 1)
 		f_printf("No routes exist\n");
-	exit (0);
+	exit(0);
 }

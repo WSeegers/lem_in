@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 21:45:21 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/23 22:00:29 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/28 22:07:41 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	check_for_command(t_env *env, char *line, int count)
 		env->start = count;
 		f_printf("%s\n", line);
 		return (1);
-	}	
+	}
 	else if (f_strstr(line, CMD_END))
 	{
 		if (env->target != NOT_SPEC)
@@ -43,7 +43,7 @@ static int	check_for_command(t_env *env, char *line, int count)
 	return (0);
 }
 
-static void	parse_neighbours(t_env *env, char* line)
+static void	parse_neighbours(t_env *env, char *line)
 {
 	char	**split;
 	int		i;
@@ -59,9 +59,11 @@ static void	parse_neighbours(t_env *env, char* line)
 			continue ;
 		}
 		split = f_strsplit(line, '-');
-		s_vert_add_adj(s_vert_by_name(env->map, split[0]), 
+		if (!split || !split[0] || !split[1] || split[2])
+			E_PIPE;
+		s_vert_add_adj(s_vert_by_name(env->map, split[0]),
 										s_vert_by_name(env->map, split[1]), 1);
-		s_vert_add_adj(s_vert_by_name(env->map, split[1]), 
+		s_vert_add_adj(s_vert_by_name(env->map, split[1]),
 										s_vert_by_name(env->map, split[0]), 1);
 		f_strarrdel(split);
 	}
@@ -77,7 +79,7 @@ void		parse_graph(t_env *env)
 	count = 0;
 	while (f_next_line(&line, STDIN) && !f_strchr(line, '-'))
 	{
-		if (check_for_command(env, line, count))
+		if (check_for_command(env, line, count) || !f_strlen(line))
 		{
 			f_strdel(&line);
 			continue ;
@@ -95,5 +97,4 @@ void		parse_graph(t_env *env)
 		E_NODEF;
 	parse_neighbours(env, line);
 	f_strdel(&line);
-	env->node_no = count;
 }
