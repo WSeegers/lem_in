@@ -6,7 +6,7 @@
 /*   By: wseegers <wseegers.mauws@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:50:24 by wseegers          #+#    #+#             */
-/*   Updated: 2018/06/28 22:10:05 by wseegers         ###   ########.fr       */
+/*   Updated: 2018/06/28 22:31:53 by wseegers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_env			*parse_env(void);
 void			parse_graph(t_env *env);
 t_list			*get_paths(t_env *env);
 void			issue_orders(t_env *env, t_list *paths);
+void			weigh_path(t_graph *path, long weight);
 
 bool			chk_conflicts(t_env *env, t_list *path_list, t_graph *new_path,
 						bool first_check);
