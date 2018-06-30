@@ -69,8 +69,8 @@ for i, moves in enumerate(inst):
         move_err(i, "Seems some ants are having sexy time in the same room!")
 
 if len(lems):
-    print "You have failed your lem-ins and" +\
-        "have left some of the poor bastards lost and alone" +\
+    print "You have failed your lem-ins and " +\
+        "have left some of the poor bastards lost and alone " +\
         "you should commit Hara-kiri"
     print "The Honorable:"
     print lems
